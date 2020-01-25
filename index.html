@@ -32,6 +32,30 @@
             cursor: pointer;
         }
 
+        .grid-item.inactive .grid-item-content .card::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #222;
+            opacity: .6;
+            z-index: 4;
+        }
+
+        .grid-item.inactive .grid-item-content .card:hover::before {
+            display: none;
+        }
+
+        .grid-item-content {
+            padding: 4px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hide-grid-item {
+            display: none;
+        }
+
         .stamp-item {
             display: none;
             position: absolute;
@@ -42,12 +66,13 @@
         }
 
         .stamp-item-content {
+            padding: 4px;
             width: 100%;
             height: 100%;
-            -webkit-transition: width 0.4s, height 0.4s;
-            -moz-transition: width 0.4s, height 0.4s;
-            -o-transition: width 0.4s, height 0.4s;
-            transition: width 0.4s, height 0.4s;
+            -webkit-transition: width 0.8s, height 0.8s;
+            -moz-transition: width 0.8s, height 0.8s;
+            -o-transition: width 0.8s, height 0.8s;
+            transition: width 0.8s, height 0.8s;
         }
 
         .stamp-item.is-expanded {
@@ -56,6 +81,58 @@
             height: 66.666vh;
             z-index: 2;
         }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0;
+            background-color: #222;
+        }
+
+        #logo-grid-item .card {
+            background-color: #c00000;
+            background-image: url("img/brand/bdd-logo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #img-museum-1-grid-item .card {
+            background-image: url("img/projects/museum-1.jpg");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        #img-hidd-grid-item .card {
+            background-image: url("img/projects/hidd.jpg");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        #img-museum-2-grid-item .card {
+            background-image: url("img/projects/museum-2.jpg");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        #img-damac-grid-item .card {
+            background-image: url("img/projects/damac.jpg");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        #img-kazma-grid-item .card {
+            background-image: url("img/projects/kazma.jpg");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        #img-al-ula-grid-item .card {
+            background-image: url("img/projects/al-ula.jpg");
+            background-size: cover;
+            background-position: bottom;
+        }
     </style>
 </head>
 
@@ -63,108 +140,138 @@
     <div class="grid">
         <!-- Grid Items -->
         <div class="grid-sizer"></div>
-        <div class="grid-item can-click" data-item-id="logo">
-            <div class="card">
-                <div class="card-body">
-                    BDD Logo
+        <div class="grid-item can-click" id="logo-grid-item" data-item-id="logo">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="mission">
-            <div class="card">
-                <div class="card-body">
-                    "mission"
+        <div class="grid-item can-click" id="mission-grid-item" data-item-id="mission">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
+                        <h2>
+                            <a>mission</a>
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="img" data-item-img="museum-1">
-            <div class="card">
-                <div class="card-body">
-                    img museum-1
+        <div class="grid-item can-click" id="img-museum-1-grid-item" data-item-id="img" data-item-img="museum-1">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="img" data-item-img="hidd">
-            <div class="card">
-                <div class="card-body">
-                    img hidd
+        <div class="grid-item can-click" id="img-hidd-grid-item" data-item-id="img" data-item-img="hidd">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="grid-item">
-            <div class="card">
-                <div class="card-body">
-                    black
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="img" data-item-img="museum-2">
-            <div class="card">
-                <div class="card-body">
-                    img museum-2
+        <div class="grid-item can-click" id="img-museum-2-grid-item" data-item-id="img" data-item-img="museum-2">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="img" data-item-img="damac">
-            <div class="card">
-                <div class="card-body">
-                    img damac
+        <div class="grid-item can-click" id="img-damac-grid-item" data-item-id="img" data-item-img="damac">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="grid-item can-click" data-item-id="projects">
-            <div class="card">
-                <div class="card-body">
-                    "projects"
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
+                        <h2>
+                            <a>projects</a>
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="grid-item">
-            <div class="card">
-                <div class="card-body">
-                    black
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="img" data-item-img="kazma">
-            <div class="card">
-                <div class="card-body">
-                    img kazma
+        <div class="grid-item can-click" id="img-kazma-grid-item" data-item-id="img" data-item-img="kazma">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="grid-item can-click" data-item-id="about">
-            <div class="card">
-                <div class="card-body">
-                    "about-us"
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
+                        <h2>
+                            <a>about us</a>
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="grid-item">
-            <div class="card">
-                <div class="card-body">
-                    black
+        <div class="grid-item" id="hide-grid-item">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="img" data-item-img="al-ula">
-            <div class="card">
-                <div class="card-body">
-                    img al-ula
+        <div class="grid-item can-click" id="img-al-ula-grid-item" data-item-id="img" data-item-img="al-ula">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="grid-item can-click" data-item-id="services">
-            <div class="card">
-                <div class="card-body">
-                    "services"
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
+                        <h2>
+                            <a>services</a>
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="grid-item can-click" data-item-id="contact">
-            <div class="card">
-                <div class="card-body">
-                    "contact"
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
+                        <h2>
+                            <a>contact</a>
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,9 +280,9 @@
         <!-- Stamp Items -->
         <div class="stamp-item">
             <div class="stamp-item-content" id="logo-stamp-item">
-                <div class="card w-100 h-100">
+                <div class="card w-100 h-100" style="background-color: #c00000;">
                     <div class="card-body">
-                        I'm the logo stamp item
+                        <img src="img/brand/bdd-logo.png" class="img-fluid h-100 d-block mx-auto">
                     </div>
                 </div>
             </div>
@@ -183,8 +290,9 @@
         <div class="stamp-item">
             <div class="stamp-item-content" id="mission-stamp-item">
                 <div class="card w-100 h-100">
-                    <div class="card-body">
-                        <p>BDD consult’s mission is the timely planning of projects with attention to detailed design
+                    <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
+                        <p>BDD consult’s mission is the timely planning of projects with attention to detailed
+                            design
                             and tender production information to successfully deliver on time, budget, and in a calm
                             manner.</p>
                     </div>
@@ -224,13 +332,11 @@
                                     <img src="img/projects/al-ula.jpg" class="img-fluid">
                                 </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselIndicators" role="button"
-                                data-slide="prev">
+                            <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#carouselIndicators" role="button"
-                                data-slide="next">
+                            <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
@@ -242,7 +348,7 @@
         <div class="stamp-item">
             <div class="stamp-item-content" id="projects-stamp-item">
                 <div class="card w-100 h-100">
-                    <div class="card-body">
+                    <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
                         <p>
                             <ul>
                                 <li>Education</li>
@@ -263,10 +369,12 @@
         <div class="stamp-item">
             <div class="stamp-item-content" id="about-stamp-item">
                 <div class="card w-100 h-100">
-                    <div class="card-body">
-                        <p>We have a team of architects, technologists and technicians at BDD Consult specialising in
+                    <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
+                        <p>We have a team of architects, technologists and technicians at BDD Consult specialising
+                            in
                             providing independent building design, delivery and documentation services. We have a
-                            multidisciplinary background and experience on projects in the Middle East, Africa and UK.
+                            multidisciplinary background and experience on projects in the Middle East, Africa and
+                            UK.
                             With particular strength of local codes within the Middle East implementing large scale
                             projects through development to completion on site, coordinating internal and external
                             disciplines. We offer BIM and CAD documentation services in addition to peer reviews and
@@ -278,17 +386,19 @@
         <div class="stamp-item">
             <div class="stamp-item-content" id="services-stamp-item">
                 <div class="card w-100 h-100">
-                    <div class="card-body">
+                    <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
                         <h3>Architectural Capability</h3>
                         <p>The BDD Consult team have experience delivering projects in the UK, Middle East and South
                             Africa and working to the relevant regional codes.</p>
                         <p>Full architectural and documentation services, Design services, Detailed design delivery,
-                            Master planning, Project management, Design management, Drafting services, Façade design and
+                            Master planning, Project management, Design management, Drafting services, Façade design
+                            and
                             3D visualisation.</p>
                         <h3>Additional services</h3>
                         <p>We work collaboratively with specialist UK and International partners to deliver services
                             including:</p>
-                        <p>Structural Engineering, Landscape Design, Mechanical Engineers, Electrical Engineers, Public
+                        <p>Structural Engineering, Landscape Design, Mechanical Engineers, Electrical Engineers,
+                            Public
                             Health engineers, Interior Design, Acoustic, Specialist lighting, Infrastructure, Fire &
                             Life safety, Façade access and maintenance and BIM management.</p>
                     </div>
@@ -298,7 +408,7 @@
         <div class="stamp-item">
             <div class="stamp-item-content" id="contact-stamp-item">
                 <div class="card w-100 h-100">
-                    <div class="card-body">
+                    <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
                         <form>
                             <div class="form-group">
                                 <label for="yourName">Your name</label>
@@ -345,10 +455,29 @@
             packery: {
                 columnWidth: '.grid-sizer'
             },
-            stamp: '.stamp-item'
+            stamp: '.stamp-item',
+            transitionDuration: '0.8s',
+            getSortData: {
+                itemOrder: '[data-item-order]'
+            },
+            sortBy: 'itemOrder'
         });
 
-        $grid.on('click', '.grid-item', function () {
+        var $hideGridItem = $('#hide-grid-item');
+
+        $grid.on('click', '.grid-item.can-click', function () {
+            $(this).toggleClass('active').siblings().removeClass('active');
+            if ($(this).hasClass('active') && $(this).hasClass('inactive')) {
+                $(this).removeClass('inactive');
+                $(this).siblings('.grid-item').addClass('inactive');
+                $('#hide-grid-item').addClass('hide-grid-item');
+            } else if ($(this).hasClass('active')) {
+                $(this).siblings('.grid-item').addClass('inactive');
+                $('#hide-grid-item').addClass('hide-grid-item');
+            } else {
+                $(this).siblings('.grid-item').removeClass('inactive');
+                $('#hide-grid-item').removeClass('hide-grid-item');
+            }
             var itemId = "#" + $(this).data('item-id') + "-stamp-item";
             var itemContent = $(itemId)[0];
             console.log(itemContent);
@@ -357,14 +486,17 @@
 
             var itemElem = itemContent.parentNode;
             if ($(itemElem).hasClass('is-expanded') && ($(this).data('item-id') == 'img')) {
-                let itemImg = $(this).data('item-img');
-                if ($(itemContent).data('item-img') !== itemImg) {
-                    $(itemContent).data('item-img', itemImg);
+                console.log('clicked item img is ' + $(this).data('item-img'));
+                console.log('expanded item img is ' + $(itemContent).data('item-img'));
+                if ($(itemContent).data('item-img') !== $(this).data('item-img')) {
+                    $(itemContent).data('item-img', $(this).data('item-img'));
                 } else {
                     $(itemElem).toggleClass('is-expanded')
                 }
-                console.log($(itemContent).data('item-img'));
             } else {
+                if ($(this).data('item-id') == 'img') {
+                    $(itemContent).data('item-img', $(this).data('item-img'));
+                }
                 $(itemElem).toggleClass('is-expanded').siblings().removeClass('is-expanded');
             }
 
@@ -380,6 +512,9 @@
         });
 
         $grid.on('click', '.stamp-item-content', function () {
+            $('.active').removeClass('active');
+            $('.inactive').removeClass('inactive');
+            $('.hide-grid-item').removeClass('hide-grid-item');
             var itemContent = this;
             setItemContentPixelSize(itemContent);
 
