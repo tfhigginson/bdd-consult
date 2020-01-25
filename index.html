@@ -485,7 +485,6 @@
                 console.log('clicked item img is ' + $(this).data('item-img'));
                 console.log('expanded item img is ' + $(itemContent).data('item-img'));
                 if ($(itemContent).data('item-img') !== $(this).data('item-img')) {
-                    console.log('look');
                     $(itemContent).data('item-img', $(this).data('item-img'));
                     switch ($(this).data('item-img')) {
                         case 'museum-1':
@@ -613,37 +612,43 @@
             console.log(event.relatedTarget.id);
             switch (event.relatedTarget.id) {
                 case 'museum-1-slide':
-                    $("[data-item-id=img]:not('#img-museum-1-grid-item')").addClass('inactive')
+                    $('#img-stamp-item').data('item-img', 'museum-1');
+                    $("[data-item-id=img]:not('#img-museum-1-grid-item')").addClass('inactive');
                     $("[data-item-id=img]:not('#img-museum-1-grid-item')").removeClass('active');
                     $('#img-museum-1-grid-item').removeClass('inactive');
                     $('#img-museum-1-grid-item').addClass('active');
                     break;
                 case 'hidd-slide':
-                    $("[data-item-id=img]:not('#img-hidd-grid-item')").addClass('inactive')
+                    $('#img-stamp-item').data('item-img', 'hidd');
+                    $("[data-item-id=img]:not('#img-hidd-grid-item')").addClass('inactive');
                     $("[data-item-id=img]:not('#img-hidd-grid-item')").removeClass('active');
                     $('#img-hidd-grid-item').removeClass('inactive');
                     $('#img-hidd-grid-item').addClass('active');
                     break;
                 case 'museum-2-slide':
-                    $("[data-item-id=img]:not('#img-museum-2-grid-item')").addClass('inactive')
+                    $('#img-stamp-item').data('item-img', 'museum-2');
+                    $("[data-item-id=img]:not('#img-museum-2-grid-item')").addClass('inactive');
                     $("[data-item-id=img]:not('#img-museum-2-grid-item')").removeClass('active');
                     $('#img-museum-2-grid-item').removeClass('inactive');
                     $('#img-museum-2-grid-item').addClass('active');
                     break;
                 case 'damac-slide':
-                    $("[data-item-id=img]:not('#img-damac-grid-item')").addClass('inactive')
+                    $('#img-stamp-item').data('item-img', 'damac');
+                    $("[data-item-id=img]:not('#img-damac-grid-item')").addClass('inactive');
                     $("[data-item-id=img]:not('#img-damac-grid-item')").removeClass('active');
                     $('#img-damac-grid-item').removeClass('inactive');
                     $('#img-damac-grid-item').addClass('active');
                     break;
                 case 'kazma-slide':
-                    $("[data-item-id=img]:not('#img-kazma-grid-item')").addClass('inactive')
+                    $('#img-stamp-item').data('item-img', 'kazma');
+                    $("[data-item-id=img]:not('#img-kazma-grid-item')").addClass('inactive');
                     $("[data-item-id=img]:not('#img-kazma-grid-item')").removeClass('active');
                     $('#img-kazma-grid-item').removeClass('inactive');
                     $('#img-kazma-grid-item').addClass('active');
                     break;
                 case 'al-ula-slide':
-                    $("[data-item-id=img]:not('#img-al-ula-grid-item')").addClass('inactive')
+                    $('#img-stamp-item').data('item-img', 'al-ula');
+                    $("[data-item-id=img]:not('#img-al-ula-grid-item')").addClass('inactive');
                     $("[data-item-id=img]:not('#img-al-ula-grid-item')").removeClass('active');
                     $('#img-al-ula-grid-item').removeClass('inactive');
                     $('#img-al-ula-grid-item').addClass('active');
