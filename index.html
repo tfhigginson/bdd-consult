@@ -303,7 +303,7 @@
             <div class="stamp-item-content" id="img-stamp-item" data-item-img="">
                 <div class="card w-100 h-100">
                     <div class="card-body">
-                        <div id="imgCarousel" class="carousel slide" data-ride="carousel">
+                        <div id="imgCarousel" class="carousel slide">
                             <ol class="carousel-indicators">
                                 <li data-target="#imgCarousel" data-slide-to="0" class="active"></li>
                                 <li data-target="#imgCarousel" data-slide-to="1"></li>
@@ -313,22 +313,22 @@
                                 <li data-target="#imgCarousel" data-slide-to="5"></li>
                             </ol>
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
+                                <div class="carousel-item active" id="museum-1-slide">
                                     <img src="img/projects/museum-1.jpg" class="img-fluid d-block h-100 mx-auto">
                                 </div>
-                                <div class="carousel-item">
+                                <div class="carousel-item" id="hidd-slide">
                                     <img src="img/projects/hidd.jpg" class="img-fluid d-block h-100 mx-auto">
                                 </div>
-                                <div class="carousel-item">
+                                <div class="carousel-item" id="museum-2-slide">
                                     <img src="img/projects/museum-2.jpg" class="img-fluid d-block h-100 mx-auto">
                                 </div>
-                                <div class="carousel-item">
+                                <div class="carousel-item" id="damac-slide">
                                     <img src="img/projects/damac.jpg" class="img-fluid d-block h-100 mx-auto">
                                 </div>
-                                <div class="carousel-item">
+                                <div class="carousel-item" id="kazma-slide">
                                     <img src="img/projects/kazma.jpg" class="img-fluid d-block h-100 mx-auto">
                                 </div>
-                                <div class="carousel-item">
+                                <div class="carousel-item" id="al-ula-slide">
                                     <img src="img/projects/al-ula.jpg" class="img-fluid d-block h-100 mx-auto">
                                 </div>
                             </div>
@@ -485,13 +485,54 @@
                 console.log('clicked item img is ' + $(this).data('item-img'));
                 console.log('expanded item img is ' + $(itemContent).data('item-img'));
                 if ($(itemContent).data('item-img') !== $(this).data('item-img')) {
+                    console.log('look');
                     $(itemContent).data('item-img', $(this).data('item-img'));
+                    switch ($(this).data('item-img')) {
+                        case 'museum-1':
+                            $('#imgCarousel').carousel(0)
+                            break;
+                        case 'hidd':
+                            $('#imgCarousel').carousel(1)
+                            break;
+                        case 'museum-2':
+                            $('#imgCarousel').carousel(2)
+                            break;
+                        case 'damac':
+                            $('#imgCarousel').carousel(3)
+                            break;
+                        case 'kazma':
+                            $('#imgCarousel').carousel(4)
+                            break;
+                        case 'al-ula':
+                            $('#imgCarousel').carousel(5)
+                            break;
+                    }
                 } else {
                     $(itemElem).toggleClass('is-expanded')
                 }
             } else {
                 if ($(this).data('item-id') == 'img') {
                     $(itemContent).data('item-img', $(this).data('item-img'));
+                    switch ($(this).data('item-img')) {
+                        case 'museum-1':
+                            $('#imgCarousel').carousel(0)
+                            break;
+                        case 'hidd':
+                            $('#imgCarousel').carousel(1)
+                            break;
+                        case 'museum-2':
+                            $('#imgCarousel').carousel(2)
+                            break;
+                        case 'damac':
+                            $('#imgCarousel').carousel(3)
+                            break;
+                        case 'kazma':
+                            $('#imgCarousel').carousel(4)
+                            break;
+                        case 'al-ula':
+                            $('#imgCarousel').carousel(5)
+                            break;
+                    }
                 }
                 $(itemElem).toggleClass('is-expanded').siblings().removeClass('is-expanded');
             }
@@ -567,6 +608,48 @@
             itemContent.style.width = size.width + 'px';
             itemContent.style.height = size.height + 'px';
         }
+
+        $('#imgCarousel').on('slid.bs.carousel', function (event) {
+            console.log(event.relatedTarget.id);
+            switch (event.relatedTarget.id) {
+                case 'museum-1-slide':
+                    $("[data-item-id=img]:not('#img-museum-1-grid-item')").addClass('inactive')
+                    $("[data-item-id=img]:not('#img-museum-1-grid-item')").removeClass('active');
+                    $('#img-museum-1-grid-item').removeClass('inactive');
+                    $('#img-museum-1-grid-item').addClass('active');
+                    break;
+                case 'hidd-slide':
+                    $("[data-item-id=img]:not('#img-hidd-grid-item')").addClass('inactive')
+                    $("[data-item-id=img]:not('#img-hidd-grid-item')").removeClass('active');
+                    $('#img-hidd-grid-item').removeClass('inactive');
+                    $('#img-hidd-grid-item').addClass('active');
+                    break;
+                case 'museum-2-slide':
+                    $("[data-item-id=img]:not('#img-museum-2-grid-item')").addClass('inactive')
+                    $("[data-item-id=img]:not('#img-museum-2-grid-item')").removeClass('active');
+                    $('#img-museum-2-grid-item').removeClass('inactive');
+                    $('#img-museum-2-grid-item').addClass('active');
+                    break;
+                case 'damac-slide':
+                    $("[data-item-id=img]:not('#img-damac-grid-item')").addClass('inactive')
+                    $("[data-item-id=img]:not('#img-damac-grid-item')").removeClass('active');
+                    $('#img-damac-grid-item').removeClass('inactive');
+                    $('#img-damac-grid-item').addClass('active');
+                    break;
+                case 'kazma-slide':
+                    $("[data-item-id=img]:not('#img-kazma-grid-item')").addClass('inactive')
+                    $("[data-item-id=img]:not('#img-kazma-grid-item')").removeClass('active');
+                    $('#img-kazma-grid-item').removeClass('inactive');
+                    $('#img-kazma-grid-item').addClass('active');
+                    break;
+                case 'al-ula-slide':
+                    $("[data-item-id=img]:not('#img-al-ula-grid-item')").addClass('inactive')
+                    $("[data-item-id=img]:not('#img-al-ula-grid-item')").removeClass('active');
+                    $('#img-al-ula-grid-item').removeClass('inactive');
+                    $('#img-al-ula-grid-item').addClass('active');
+                    break;
+            }
+        })
     </script>
 </body>
 
