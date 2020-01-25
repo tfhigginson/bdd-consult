@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>BDD Consult</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        .grid-item,
+        .grid-sizer {
+            width: 20%;
+            height: 33.333vh;
+        }
+
+        .grid-item-content {
+            width: 100%;
+            height: 100%;
+            background: #0D8;
+            -webkit-transition: width 0.4s, height 0.4s;
+            -moz-transition: width 0.4s, height 0.4s;
+            -o-transition: width 0.4s, height 0.4s;
+            transition: width 0.4s, height 0.4s;
+        }
+
+        .grid-item:hover .grid-item-content {
+            background: #8CF;
+            cursor: pointer;
+        }
+
+        /* both item and item content change size */
+        .grid-item.is-expanded {
+            width: 60%;
+            height: 66.666vh;
+            z-index: 2;
+        }
+
+        .grid-item.is-expanded .grid-item-content {
+            background: #F90;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="grid-sizer"></div>
+        <div class="grid-item" data-order="1" data-alt-order="1">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        BDD Logo
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="2" data-alt-order="2">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        "mission"
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="3" data-alt-order="3">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        img museum-1
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="4" data-alt-order="4">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        img hidd
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="5" data-alt-order="5">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        black
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="6" data-alt-order="6">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        img museum-2
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="7" data-alt-order="7">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        img damac
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="8" data-alt-order="8">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        "projects"
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="9" data-alt-order="9">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        black
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="10" data-alt-order="13">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        img kazma
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="11" data-alt-order="12">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        "about-us"
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="12" data-alt-order="14">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        black
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item" data-order="13" data-alt-order="15">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        img al-ula
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item services-grid-item" data-order="14" data-alt-order="10">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        "services"
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item contact-grid-item" data-order="15" data-alt-order="11">
+            <div class="grid-item-content">
+                <div class="card">
+                    <div class="card-body">
+                        "contact"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/packery-mode.pkgd.min.js"></script>
+    <script>
+        let $grid = $('.grid').isotope({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            layoutMode: 'packery',
+            packery: {
+                columnWidth: '.grid-sizer',
+                rowHeight: '.grid-sizer'
+            },
+            getSortData : {
+                order: '[data-order]',
+                altOrder: '[data-alt-order]'
+            },
+            sortBy: 'order'
+        });
+
+        $grid.on('click', '.grid-item-content', function () {
+            let itemContent = this;
+            setItemContentPixelSize(itemContent);
+            let itemElem = itemContent.parentNode;
+            if (!$(itemElem).hasClass('is-expanded')) {
+                $('.is-expanded').removeClass('is-expanded');
+            };
+            $(itemElem).toggleClass('is-expanded');
+            $(itemElem).get(0).scrollIntoView();
+            // force redraw
+            let redraw = itemContent.offsetWidth;
+            // renable default transition
+            itemContent.style[transitionProp] = '';
+            addTransitionListener(itemContent);
+            setItemContentTransitionSize(itemContent, itemElem);
+            $grid.isotope('layout');
+        });
+
+        let docElemStyle = document.documentElement.style;
+        let transitionProp = typeof docElemStyle.transition == 'string' ?
+            'transition' : 'WebkitTransition';
+        let transitionEndEvent = {
+            WebkitTransition: 'webkitTransitionEnd',
+            transition: 'transitionend'
+        }[transitionProp];
+
+        function setItemContentPixelSize(itemContent) {
+            let previousContentSize = getSize(itemContent);
+            // disable transition
+            itemContent.style[transitionProp] = 'none';
+            // set current size in pixels
+            itemContent.style.width = previousContentSize.width + 'px';
+            itemContent.style.height = previousContentSize.height + 'px';
+        }
+
+        function addTransitionListener(itemContent) {
+            if (!transitionProp) {
+                return;
+            }
+            // reset 100%/100% sizing after transition end
+            let onTransitionEnd = function () {
+                itemContent.style.width = '';
+                itemContent.style.height = '';
+                itemContent.removeEventListener(transitionEndEvent, onTransitionEnd);
+            };
+            itemContent.addEventListener(transitionEndEvent, onTransitionEnd);
+        }
+
+        function setItemContentTransitionSize(itemContent, itemElem) {
+            // set new size
+            let size = getSize(itemElem);
+            itemContent.style.width = size.width + 'px';
+            itemContent.style.height = size.height + 'px';
+        }
+    </script>
+</body>
+
+</html>
