@@ -32,13 +32,13 @@
             cursor: pointer;
         }
 
-        .grid-item.inactive .grid-item-content .card::before {
+        .grid-item.img-grid-item.inactive .grid-item-content .card::before {
             content: "";
             position: absolute;
             width: 100%;
             height: 100%;
             background-color: #111;
-            opacity: .6;
+            opacity: .8;
             z-index: 4;
         }
 
@@ -159,7 +159,8 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" id="img-museum-1-grid-item" data-item-id="img" data-item-img="museum-1">
+        <div class="grid-item img-grid-item can-click" id="img-museum-1-grid-item" data-item-id="img"
+            data-item-img="museum-1">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body">
@@ -167,7 +168,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" id="img-hidd-grid-item" data-item-id="img" data-item-img="hidd">
+        <div class="grid-item img-grid-item can-click" id="img-hidd-grid-item" data-item-id="img" data-item-img="hidd">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body">
@@ -175,7 +176,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" id="blank-grid-item-1">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body">
@@ -183,7 +184,8 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" id="img-museum-2-grid-item" data-item-id="img" data-item-img="museum-2">
+        <div class="grid-item img-grid-item can-click" id="img-museum-2-grid-item" data-item-id="img"
+            data-item-img="museum-2">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body">
@@ -191,7 +193,8 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" id="img-damac-grid-item" data-item-id="img" data-item-img="damac">
+        <div class="grid-item img-grid-item can-click" id="img-damac-grid-item" data-item-id="img"
+            data-item-img="damac">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body">
@@ -199,7 +202,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="projects">
+        <div class="grid-item can-click" id="projects-grid-item" data-item-id="projects">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
@@ -210,7 +213,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" id="blank-grid-item-2">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body">
@@ -218,7 +221,8 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" id="img-kazma-grid-item" data-item-id="img" data-item-img="kazma">
+        <div class="grid-item img-grid-item can-click" id="img-kazma-grid-item" data-item-id="img"
+            data-item-img="kazma">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body">
@@ -226,7 +230,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="about">
+        <div class="grid-item can-click" id="about-grid-item" data-item-id="about">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
@@ -237,7 +241,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item" id="hide-grid-item">
+        <div class="grid-item" id="blank-grid-item-3">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body">
@@ -245,7 +249,8 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" id="img-al-ula-grid-item" data-item-id="img" data-item-img="al-ula">
+        <div class="grid-item img-grid-item can-click" id="img-al-ula-grid-item" data-item-id="img"
+            data-item-img="al-ula">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body">
@@ -253,7 +258,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="services">
+        <div class="grid-item can-click" id="services-grid-item" data-item-id="services">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
@@ -264,7 +269,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item can-click" data-item-id="contact">
+        <div class="grid-item can-click" id="contact-grid-item" data-item-id="contact">
             <div class="grid-item-content">
                 <div class="card">
                     <div class="card-body text-light d-flex flex-column justify-content-center align-items-center">
@@ -430,6 +435,7 @@
                                 <label for="message">Message</label>
                                 <textarea class="form-control" id="message" rows="3"></textarea>
                             </div>
+                            <button class="btn btn-light btn-block" type="submit">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -459,26 +465,74 @@
             transitionDuration: '0.8s'
         });
 
-        var $hideGridItem = $('#hide-grid-item');
+        let activeItem
 
         $grid.on('click', '.grid-item.can-click', function () {
+            var itemId = "#" + $(this).data('item-id') + "-stamp-item";
+            var itemContent = $(itemId)[0];
+
+            setItemContentPixelSize(itemContent);
+
             $(this).toggleClass('active').siblings().removeClass('active');
+
             if ($(this).hasClass('active') && $(this).hasClass('inactive')) {
+                switch ($(this).data('item-id')) {
+                    case 'logo':
+                        activeItem = 'logo';
+                        break;
+                    case 'mission':
+                        activeItem = 'mission';
+                        break;
+                    case 'img':
+                        activeItem = 'img';
+                        break;
+                    case 'projects':
+                        activeItem = 'projects';
+                        break;
+                    case 'about':
+                        activeItem = 'about';
+                        break;
+                    case 'services':
+                        activeItem = 'services';
+                        break;
+                    case 'contact':
+                        activeItem = 'contact'
+                        break;
+                }
                 $(this).removeClass('inactive');
                 $(this).siblings('.grid-item').addClass('inactive');
                 $('#hide-grid-item').addClass('hide-grid-item');
             } else if ($(this).hasClass('active')) {
+                switch ($(this).data('item-id')) {
+                    case 'logo':
+                        activeItem = 'logo';
+                        break;
+                    case 'mission':
+                        activeItem = 'mission';
+                        break;
+                    case 'img':
+                        activeItem = 'img';
+                        break;
+                    case 'projects':
+                        activeItem = 'projects';
+                        break;
+                    case 'about':
+                        activeItem = 'about';
+                        break;
+                    case 'services':
+                        activeItem = 'services';
+                        break;
+                    case 'contact':
+                        activeItem = 'contact'
+                        break;
+                }
                 $(this).siblings('.grid-item').addClass('inactive');
                 $('#hide-grid-item').addClass('hide-grid-item');
             } else {
                 $(this).siblings('.grid-item').removeClass('inactive');
                 $('#hide-grid-item').removeClass('hide-grid-item');
+                activeItem = 'none';
             }
-            var itemId = "#" + $(this).data('item-id') + "-stamp-item";
-            var itemContent = $(itemId)[0];
-            console.log(itemContent);
-            console.log(itemId);
-            setItemContentPixelSize(itemContent);
 
             var itemElem = itemContent.parentNode;
             if ($(itemElem).hasClass('is-expanded') && ($(this).data('item-id') == 'img')) {
@@ -534,6 +588,65 @@
                     }
                 }
                 $(itemElem).toggleClass('is-expanded').siblings().removeClass('is-expanded');
+            }
+
+            console.log('active item is ' + activeItem);
+
+            switch (activeItem) {
+                case 'none':
+                    $('.grid-item.hide-grid-item').removeClass('hide-grid-item');
+                    break;
+                case 'logo':
+                    break;
+                case 'mission':
+                    $('.grid-item.hide-grid-item').removeClass('hide-grid-item');
+                    $('#contact-grid-item').addClass('hide-grid-item');
+                    $('#services-grid-item').addClass('hide-grid-item');
+                    $('#about-grid-item').addClass('hide-grid-item');
+                    $('#projects-grid-item').addClass('hide-grid-item');
+                    $('#img-kazma-grid-item').addClass('hide-grid-item');
+                    $('#img-al-ula-grid-item').addClass('hide-grid-item');
+                    break;
+                case 'img':
+                    $('.grid-item.hide-grid-item').removeClass('hide-grid-item');
+                    $('#blank-grid-item-3').addClass('hide-grid-item');
+                    break;
+                case 'projects':
+                    $('.grid-item.hide-grid-item').removeClass('hide-grid-item');
+                    $('#mission-grid-item').addClass('hide-grid-item');
+                    $('#contact-grid-item').addClass('hide-grid-item');
+                    $('#services-grid-item').addClass('hide-grid-item');
+                    $('#about-grid-item').addClass('hide-grid-item');
+                    $('#img-kazma-grid-item').addClass('hide-grid-item');
+                    $('#img-al-ula-grid-item').addClass('hide-grid-item');
+                    break;
+                case 'about':
+                    $('.grid-item.hide-grid-item').removeClass('hide-grid-item');
+                    $('#mission-grid-item').addClass('hide-grid-item');
+                    $('#contact-grid-item').addClass('hide-grid-item');
+                    $('#services-grid-item').addClass('hide-grid-item');
+                    $('#projects-grid-item').addClass('hide-grid-item');
+                    $('#img-kazma-grid-item').addClass('hide-grid-item');
+                    $('#img-al-ula-grid-item').addClass('hide-grid-item');
+                    break;
+                case 'services':
+                    $('.grid-item.hide-grid-item').removeClass('hide-grid-item');
+                    $('#mission-grid-item').addClass('hide-grid-item');
+                    $('#contact-grid-item').addClass('hide-grid-item');
+                    $('#about-grid-item').addClass('hide-grid-item');
+                    $('#projects-grid-item').addClass('hide-grid-item');
+                    $('#img-kazma-grid-item').addClass('hide-grid-item');
+                    $('#img-al-ula-grid-item').addClass('hide-grid-item');
+                    break;
+                case 'contact':
+                    $('.grid-item.hide-grid-item').removeClass('hide-grid-item');
+                    $('#mission-grid-item').addClass('hide-grid-item');
+                    $('#services-grid-item').addClass('hide-grid-item');
+                    $('#about-grid-item').addClass('hide-grid-item');
+                    $('#projects-grid-item').addClass('hide-grid-item');
+                    $('#img-kazma-grid-item').addClass('hide-grid-item');
+                    $('#img-al-ula-grid-item').addClass('hide-grid-item');
+                    break;
             }
 
             // force redraw
